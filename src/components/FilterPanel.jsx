@@ -1,0 +1,3 @@
+import { filterGroups } from '../config/filters'
+export default function FilterPanel({ selected, onSelect, onClear }) { return <div className="filter-panel"><SearchBarProxy onSearch={() => {}} />{filterGroups.map(group => <div className="filter-row" key={group.key}><div className="filter-label">{group.label}：</div><div className="filter-options">{group.options.map(option => <button key={option} className={selected[group.key] === option ? 'selected' : ''} onClick={() => onSelect(group.key, option)}>{option}</button>)}</div></div>)}<div className="filter-footer"><button onClick={onClear}>清空条件</button><button>展开更多条件⌄</button></div></div> }
+function SearchBarProxy() { return null }

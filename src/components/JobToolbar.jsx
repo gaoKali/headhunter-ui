@@ -1,0 +1,2 @@
+const checks = ['预充值剩余', '会员', '企业委托', '聚焦职位', '运作职位']
+export default function JobToolbar({ checked, onToggle }) { return <div className="job-toolbar"><button className="toolbar-select">客户ROI <span>⌄</span></button><button className="toolbar-select">更新时间 <span>⌄</span></button><div className="checks">{checks.map(label => <label key={label}><input type="checkbox" checked={checked[label]} onChange={() => onToggle(label)} /><span className="fake-check">✓</span>{label}</label>)}</div><button className="reliable-button">一键筛选靠谱职位</button></div> }

@@ -1,0 +1,2 @@
+import { sidebarGroups } from '../config/filters'
+export default function Sidebar({ onPublish, onManage }) { return <aside className="sidebar"><button className="publish-button" onClick={onPublish}><span>⊕</span> 发布职位</button><div className="side-menu">{sidebarGroups.map(group => <section key={group.label}><div className="side-group-title"><span>▪</span>{group.label}</div>{group.items.map(item => <button className={item === '全部职位' ? 'selected' : ''} onClick={() => item === '我的职位' && onManage()} key={item}><span>•</span>{item}</button>)}</section>)}</div></aside> }

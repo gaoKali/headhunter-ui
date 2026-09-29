@@ -1,0 +1,3 @@
+export default function JobManagementModal({ jobs, onClose, onEdit, onDelete }) {
+  return <div className="modal-backdrop" onClick={onClose}><div className="modal management-modal" onClick={event => event.stopPropagation()}><div className="modal-header"><h2>职位管理</h2><button onClick={onClose}>×</button></div><div className="management-list">{jobs.length ? jobs.map(job => <div className="management-item" key={job.id}><div><strong>{job.title}</strong><span>{job.company} · {job.city}</span></div><div className="management-actions"><button className="job-action" onClick={() => onEdit(job)}>编辑</button><button className="job-action danger" onClick={() => onDelete(job)}>删除</button></div></div>) : <p className="management-empty">暂无职位</p>}</div></div></div>
+}

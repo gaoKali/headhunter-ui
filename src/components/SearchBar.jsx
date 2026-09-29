@@ -1,0 +1,2 @@
+import { useState } from 'react'
+export default function SearchBar({ onSearch }) { const [value, setValue] = useState(''); const submit = () => onSearch(value.trim()); return <div className="search-row"><button className="condition-select">任意条件 <span>⌄</span></button><input value={value} onChange={event => setValue(event.target.value)} onKeyDown={event => event.key === 'Enter' && submit()} placeholder="请输入客户名称、职位名称、职位对接人、职位JD关键词" /><button className="search-button" onClick={submit}>⌕ <span>搜索</span></button></div> }
